@@ -6,13 +6,9 @@ public class SequentialMxMultiplier extends AMxMultiplier {
 
   @Override
   protected void calculate(Matrix mx1, Matrix mx2, Integer size, Matrix resMx) {
-    try {
-      for (int i = 0; i < size; i++)
-        for (int j = 0; j < size; j++)
-          calculateElement(resMx, mx1, mx2, i, j);
-    } catch (Exception e) {
-      throw new RuntimeException("Calculation error, exiting...", e);
-    }
+    for (int i = 0; i < size; i++)
+      for (int j = 0; j < size; j++)
+        calculateElement(resMx, mx1, mx2, i, j);
   }
 
   private void calculateElement(Matrix resMx, Matrix mx1, Matrix mx2, int i, int j) {
